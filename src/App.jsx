@@ -1,30 +1,28 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+import React, { useState } from 'react';
 import Hero from './components/Hero';
-import PixelTrail from './components/PixelTrail';
+import SplashScreen from './components/SplashScreen';
+import GridTrail from './components/GridTrail';
+import bgImage from './assets/bg.png';
 import './index.css';
 
-
 function App() {
-  return (
-    <div className="animate-fade-in" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
-      <PixelTrail
-        gridSize={14}
-        trailSize={0.05}
-        maxAge={100}
-        interpolate={1.5}
-        color="#D7FF00"
-        gooeyFilter={{ id: "custom-goo-filter", strength: 2 }}
-        gooeyEnabled={false}
-        gooStrength={2}
+  const [showSplash, setShowSplash] = useState(true);
 
-      />
-      <div style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
-        <Navbar />
-        <Hero />
+  return (
+    <>
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', backgroundColor: '#0a0a0a', backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <GridTrail />
+        <div
+          className="animate-fade-in"
+          style={{ position: 'relative', zIndex: 1, overflow: 'hidden', minHeight: '100vh' }}
+        >
+          <Hero />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
 export default App;
+

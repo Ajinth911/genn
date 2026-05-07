@@ -1,19 +1,30 @@
 .nav-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-  gap: 20px;
+  align-self: auto;
+  width: 920px;
+  height: 110px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 36px;
+  gap: 36px;
+  opacity: 1;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .logo-circle {
-  width: 72px;
-  height: 72px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
-  background-color: rgba(28, 28, 28, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(240, 240, 240, 0.1);
+  backdrop-filter: blur(10%);
+  -webkit-backdrop-filter: blur(10%);
+  border: 1px solid rgba(240, 240, 240, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,10 +34,10 @@
 .nav-pill {
   display: flex;
   align-items: center;
-  background-color: rgba(28, 28, 28, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(240, 240, 240, 0.1);
+  backdrop-filter: blur(10%);
+  -webkit-backdrop-filter: blur(10%);
+  border: 1px solid rgba(240, 240, 240, 0.1);
   border-radius: 100px;
   padding: 8px 8px 8px 32px;
   pointer-events: none;
@@ -41,9 +52,15 @@
 
 .nav-link {
   color: #E0E0E0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.2px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
 }
 
 .cta-btn {
@@ -134,4 +151,13 @@
     justify-content: center;
     margin-right: 0;
   }
+}
+
+.custom-sparkle-icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: 8px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }

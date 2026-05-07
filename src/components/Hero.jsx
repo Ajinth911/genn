@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import Navbar from './Navbar';
 import LogoMark from './LogoMark';
 import './Hero.css';
-
 
 export default function Hero() {
   return (
     <section className="hero-section">
+      <Navbar />
       <div className="container">
 
         {/* Main Title Area */}
@@ -29,9 +30,9 @@ export default function Hero() {
         {/* Tags and Subtitle */}
         <div className="middle-bar">
           <div className="tags-container">
-            <div className="tag"><span className="dot"></span> Launchpad</div>
-            <div className="tag"><span className="dot"></span> AI Forge</div>
-            <div className="tag"><span className="dot"></span> Brand Studio</div>
+            <div className="tag"><span className="dot"></span> Launchpad<span className='dot'></span></div>
+            <div className="tag"><span className="dot"></span> AI Forge<span className='dot'></span></div>
+            <div className="tag"><span className="dot"></span> Brand Studio<span className='dot'></span></div>
           </div>
 
           <div className="subtitle-wrapper">
@@ -44,16 +45,15 @@ export default function Hero() {
         <div className="bottom-section">
           <div className="capabilities-col">
             <h2 className="cap-title">OUR<br />CAPABILITIES</h2>
-            <p className="cap-desc">
+            <p>
               We're a Gen Z team of strategists,<br />
               designers and AI builders.
             </p>
           </div>
 
-
           <div className="squares-wrapper-right">
             <div className="yellow-square-with-logo">
-              <LogoMark color="#b0d600" size={60} />
+              <LogoMark color=" rgba(161, 191, 0, 1)" size="50%" />
             </div>
           </div>
         </div>
@@ -62,5 +62,4 @@ export default function Hero() {
     </section>
   );
 }
-
 
