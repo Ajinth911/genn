@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 const CELL_SIZE = 120;
 const TRAIL_COLOR = { r: 194, g: 230, b: 0 }; // #c2e600 brand green
-const DECAY_SPEED = 0.03; // opacity lost per frame (lower = longer trail)
+const DECAY_SPEED = 0.004; // very slow decay for a long, smooth trail
 const PEAK_OPACITY = 0.18; // max opacity of a lit cell
 
 export default function GridTrail() {

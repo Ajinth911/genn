@@ -14,32 +14,34 @@ export default function Navbar() {
 
   return (
     <nav className="nav-container">
-      {/* Logo Circle */}
-      <div className="logo-circle">
-        <LogoMark color="white" size={32} />
-      </div>
-
-      {/* Main Nav Pill */}
-      <div className="nav-pill">
-        <div className="nav-links">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">People</a>
-          <a href="#" className="nav-link">Launchpad</a>
-          <a href="#" className="nav-link">Product</a>
-          <a href="#" className="nav-link">Certificate</a>
+      {/* Logo + Pill grouped together on the left */}
+      <div className="nav-left-group">
+        <div className="logo-circle">
+          <LogoMark color="white" size={32} />
         </div>
-        
-        <button 
-          className="mobile-menu-btn"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={20} color="#E0E0E0" /> : <Menu size={20} color="#E0E0E0" />}
-        </button>
 
-        <button className="cta-btn desktop-cta">
-          Shabdam AI
-          <CustomSparkle />
-        </button>
+        {/* Main Nav Pill */}
+        <div className="nav-pill">
+          <div className="nav-links">
+            <a href="#" className="nav-link">Home</a>
+            <a href="#" className="nav-link">People</a>
+            <a href="#" className="nav-link">Launchpad</a>
+            <a href="#" className="nav-link">Product</a>
+            <a href="#" className="nav-link">Certificate</a>
+          </div>
+
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={20} color="#E0E0E0" /> : <Menu size={20} color="#E0E0E0" />}
+          </button>
+
+          <button className="cta-btn desktop-cta">
+            Shabdam AI
+            <CustomSparkle />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -50,7 +52,7 @@ export default function Navbar() {
           <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Launchpad</a>
           <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Product</a>
           <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Certificate</a>
-          
+
           <button className="cta-btn mobile-cta">
             Shabdam AI
             <CustomSparkle />
@@ -60,5 +62,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

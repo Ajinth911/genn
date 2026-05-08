@@ -1,62 +1,69 @@
+/* ─── Base (mobile-first) ────────────────────────────────────────── */
 .nav-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-self: auto;
-  width: 920px;
-  height: 110px;
-  padding-top: 12px;
-  padding-right: 16px;
-  padding-bottom: 12px;
-  padding-left: 36px;
-  gap: 36px;
-  opacity: 1;
-  border-radius: 50px;
+  width: 100%;
+  padding: 12px 16px;
+  gap: 0;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 8px;
   max-width: 100%;
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Groups logo + pill tightly together */
+.nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 auto;
 }
 
 .logo-circle {
-  width: 82px;
-  height: 82px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: rgba(240, 240, 240, 0.1);
-  backdrop-filter: blur(10%);
-  -webkit-backdrop-filter: blur(10%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(240, 240, 240, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 .nav-pill {
   display: flex;
   align-items: center;
   background-color: rgba(240, 240, 240, 0.1);
-  backdrop-filter: blur(10%);
-  -webkit-backdrop-filter: blur(10%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(240, 240, 240, 0.1);
   border-radius: 100px;
-  padding: 8px 8px 8px 32px;
+  padding: 8px;
   pointer-events: none;
+  height: 48px;
+  box-sizing: border-box;
 }
 
 .nav-links {
-  display: flex;
-  gap: 32px;
-  margin-right: 32px;
+  display: none;
+  gap: 24px;
   pointer-events: auto;
 }
 
 .nav-link {
   color: #E0E0E0;
-  font-size: 16px;
+  font-size: clamp(13px, 1.4vw, 16px);
   font-weight: 400;
   letter-spacing: 0.2px;
   transition: color 0.3s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -66,41 +73,44 @@
 .cta-btn {
   background-color: var(--accent-color);
   color: #000000;
-  font-size: 15px;
+  font-size: clamp(13px, 1.3vw, 15px);
   font-weight: 500;
-  padding: 12px 24px;
+  padding: 12px 16px;
   border-radius: 100px;
   display: flex;
   align-items: center;
   pointer-events: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mobile-menu-btn {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
   cursor: pointer;
   pointer-events: auto;
-  margin-right: 12px;
   padding: 4px;
 }
 
 .mobile-menu-overlay {
   position: absolute;
-  top: 100px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
   max-width: 400px;
-  background-color: rgba(28, 28, 28, 0.8);
+  background-color: rgba(28, 28, 28, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 32px 24px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
   z-index: 100;
   pointer-events: auto;
@@ -110,46 +120,130 @@
   font-size: 18px;
 }
 
+.desktop-cta {
+  display: none;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
+.mobile-cta {
+  display: flex;
+}
+
+/* ─── Tablet (≥ 768px) ───────────────────────────────────────────── */
+@media (min-width: 768px) {
   .nav-container {
-    padding: 20px 24px;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
+    width: 90%;
+    padding: 10px 16px;
   }
-  
+
+  .nav-left-group {
+    gap: 6px;
+  }
+
   .logo-circle {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
 
   .nav-pill {
-    padding: 12px;
-    border-radius: 50%;
+    padding: 8px 8px 8px 24px;
+    height: 64px;
   }
 
   .nav-links {
-    display: none; /* Hide links on mobile for cleaner look */
-  }
-
-  .desktop-cta {
-    display: none;
-  }
-
-  .mobile-cta {
-    width: 100%;
-    justify-content: center;
-    padding: 16px;
-    margin-top: 16px;
+    display: flex;
+    gap: 24px;
+    margin-right: 16px;
   }
 
   .mobile-menu-btn {
+    display: none;
+  }
+
+  .desktop-cta {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0;
+  }
+
+  .mobile-cta {
+    display: none;
+  }
+}
+
+/* ─── Laptop (≥ 1024px) ──────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .nav-container {
+    width: 960px;
+    height: 110px;
+    padding: 12px 0;
+    margin-top: 10px;
+  }
+
+  .nav-left-group {
+    gap: 8px;
+  }
+
+  .logo-circle {
+    width: 82px;
+    height: 82px;
+  }
+
+  .nav-pill {
+    padding: 8px 8px 8px 32px;
+    height: 82px;
+  }
+
+  .nav-links {
+    gap: 32px;
+    margin-right: 32px;
+  }
+
+  .cta-btn {
+    padding: 14px 20px;
+  }
+}
+
+/* ─── Desktop (≥ 1280px) ─────────────────────────────────────────── */
+@media (min-width: 1280px) {
+  .nav-container {
+    width: 1000px;
+  }
+
+  .nav-links {
+    gap: 36px;
+  }
+
+  .cta-btn {
+    padding: 16px;
+  }
+}
+
+/* ─── Wide / 4K (≥ 1920px) ──────────────────────────────────────── */
+@media (min-width: 1920px) {
+  .nav-container {
+    width: 1200px;
+    height: 120px;
+    padding: 14px 0;
+  }
+
+  .nav-left-group {
+    gap: 10px;
+  }
+
+  .logo-circle {
+    width: 92px;
+    height: 92px;
+  }
+
+  .nav-pill {
+    height: 92px;
+  }
+
+  .nav-links {
+    gap: 48px;
+  }
+
+  .cta-btn {
+    font-size: 17px;
+    padding: 16px 24px;
   }
 }
 
