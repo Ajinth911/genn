@@ -8,7 +8,7 @@ const SplashScreen = ({ onComplete }) => {
     // Splash lifecycle: shrink 0-1.8s, logo 1.6-3.4s, expand 3.2-4.5s
     const timer = setTimeout(() => {
       onComplete();
-    }, 4600);
+    }, 4500);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
