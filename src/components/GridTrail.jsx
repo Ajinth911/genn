@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const CELL_SIZE = 80;
+const CELL_SIZE = 60;
 const TRAIL_COLOR = { r: 194, g: 230, b: 0 }; // #c2e600 brand green
 const DECAY_SPEED = 0.004; // very slow decay for a long, smooth trail
 const PEAK_OPACITY = 0.18; // max opacity of a lit cell
