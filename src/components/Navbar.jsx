@@ -30,16 +30,16 @@ export default function Navbar() {
             <a href="#" className="nav-link">Certificate</a>
           </div>
 
+          <button className="cta-btn">
+            Shabdam AI
+            <CustomSparkle />
+          </button>
+
           <button
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={20} color="#E0E0E0" /> : <Menu size={20} color="#E0E0E0" />}
-          </button>
-
-          <button className="cta-btn desktop-cta">
-            Shabdam AI
-            <CustomSparkle />
           </button>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
           <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Product</a>
           <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Certificate</a>
 
-          <button className="cta-btn mobile-cta">
+          <button className="cta-btn mobile-cta-overlay" style={{ display: 'flex' }}>
             Shabdam AI
             <CustomSparkle />
           </button>
